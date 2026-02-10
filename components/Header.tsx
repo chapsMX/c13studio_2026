@@ -43,44 +43,10 @@ export default function Header() {
   }, [])
 
   return (
-    <header className="sticky top-0 z-50 bg-c13-orange">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-        {/* Logo + Desktop Navigation Container */}
-        <div className="hidden md:flex items-center gap-8">
-          {/* Logo */}
-          <Link href="/" className="relative h-10 w-auto flex-shrink-0">
-            <Image
-              src="/images/logo.png"
-              alt="c13studio"
-              height={40}
-              width={120}
-              className="object-contain brightness-0 invert"
-            />
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="flex gap-0">
-            {navItems.map((item) => {
-              const isActive = activeSection === item.id
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`px-4 py-2 transition duration-200 block text-white ${
-                    isActive
-                      ? 'bg-black bg-opacity-20'
-                      : 'hover:bg-black hover:bg-opacity-10'
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              )
-            })}
-          </div>
-        </div>
-
-        {/* Mobile Logo */}
-        <Link href="/" className="md:hidden relative h-10 w-auto">
+    <header className="sticky top-0 z-50 bg-c13-orange w-full">
+      <nav className="w-full px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        {/* Logo - Izquierda */}
+        <Link href="/" className="relative h-10 w-auto flex-shrink-0">
           <Image
             src="/images/logo.png"
             alt="c13studio"
@@ -90,7 +56,27 @@ export default function Header() {
           />
         </Link>
 
-        {/* Mobile menu button */}
+        {/* Desktop Navigation - Derecha */}
+        <div className="hidden md:flex gap-0">
+          {navItems.map((item) => {
+            const isActive = activeSection === item.id
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`px-4 py-2 transition duration-200 block text-white ${
+                  isActive
+                    ? 'bg-black bg-opacity-20'
+                    : 'hover:bg-black hover:bg-opacity-10'
+                }`}
+              >
+                {item.label}
+              </Link>
+            )
+          })}
+        </div>
+
+        {/* Mobile menu button - Derecha */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden p-2 text-white"
@@ -101,10 +87,10 @@ export default function Header() {
         </button>
       </nav>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation - Desplegable */}
       {isOpen && (
-        <div className="md:hidden bg-c13-orange border-t border-c13-orange border-opacity-50 py-4">
-          <div className="flex flex-col gap-0 px-0">
+        <div className="md:hidden w-full bg-c13-orange border-t border-c13-orange border-opacity-50">
+          <div className="flex flex-col gap-0 px-4 py-4">
             {navItems.map((item) => {
               const isActive = activeSection === item.id
               return (
