@@ -1,0 +1,85 @@
+'use client'
+
+import { useState } from 'react'
+
+export default function Contacto() {
+  const [formData, setFormData] = useState({ nombre: '', email: '', mensaje: '' })
+  const [loading, setLoading] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setLoading(true)
+    // Contacto logic aquí (Resend integration)
+    setTimeout(() => {
+      setLoading(false)
+      setFormData({ nombre: '', email: '', mensaje: '' })
+    }, 1000)
+  }
+
+  return (
+    <section className="py-20 bg-gray-50">
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-c13-dark mb-4">
+            ¿Tienes algún proyecto en mente?
+          </h2>
+          <p className="text-lg text-gray-600">
+            Contáctanos y hagámoslo realidad.
+          </p>
+        </div>
+
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div>
+            <label className="block text-sm font-medium text-c13-dark mb-2">
+              Nombre
+            </label>
+            <input
+              type="text"
+              required
+              value={formData.nombre}
+              onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-c13-blue focus:border-transparent"
+              placeholder="Tu nombre"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-c13-dark mb-2">
+              Correo Electrónico
+            </label>
+            <input
+              type="email"
+              required
+              value={formData.email}
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-c13-blue focus:border-transparent"
+              placeholder="tu@email.com"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-c13-dark mb-2">
+              Mensaje
+            </label>
+            <textarea
+              required
+              value={formData.mensaje}
+              onChange={(e) => setFormData({ ...formData, mensaje: e.target.value })}
+              rows={5}
+              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-c13-blue focus:border-transparent resize-none"
+              placeholder="Cuéntanos sobre tu proyecto..."
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-full bg-c13-orange hover:bg-c13-orange/90 disabled:bg-gray-400 text-white font-semibold py-3 rounded-lg transition"
+          >
+            {loading ? 'Enviando...' : 'Enviar Mensaje'}
+          </button>
+        </form>
+      </div>
+    </section>
+  )
+}
