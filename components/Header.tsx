@@ -43,8 +43,8 @@ export default function Header() {
   }, [])
 
   return (
-    <header className="sticky top-0 z-50 w-full">
-      <nav className="w-full bg-c13-orange px-6 sm:px-8 lg:px-12 py-4 flex justify-between items-center">
+    <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-100">
+      <nav className="w-full px-6 sm:px-8 lg:px-12 py-4 flex justify-between items-center">
         {/* Logo - Izquierda */}
         <Link href="/" className="relative h-12 w-auto flex-shrink-0">
           <Image
@@ -57,17 +57,17 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation - Derecha */}
-        <div className="hidden md:flex items-center gap-0">
+        <div className="hidden md:flex items-center gap-1">
           {navItems.map((item) => {
             const isActive = activeSection === item.id
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`px-4 py-3 text-white transition duration-200 ${
+                className={`px-5 py-3 text-sm font-medium transition duration-200 ${
                   isActive
-                    ? 'bg-black bg-opacity-20'
-                    : 'hover:bg-black hover:bg-opacity-15'
+                    ? 'bg-c13-orange text-white'
+                    : 'text-c13-dark hover:bg-c13-orange hover:text-white'
                 }`}
               >
                 {item.label}
@@ -79,7 +79,7 @@ export default function Header() {
         {/* Mobile Menu Button - Derecha */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 text-white hover:bg-black hover:bg-opacity-10 rounded"
+          className="md:hidden p-2 text-c13-dark"
         >
           <svg
             className="w-6 h-6"
@@ -99,7 +99,7 @@ export default function Header() {
 
       {/* Mobile Navigation - Desplegable */}
       {isOpen && (
-        <div className="md:hidden w-full bg-c13-orange">
+        <div className="md:hidden w-full bg-white border-t border-gray-100">
           <div className="flex flex-col gap-0">
             {navItems.map((item) => {
               const isActive = activeSection === item.id
@@ -108,10 +108,10 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className={`px-6 py-3 text-white transition duration-200 ${
+                  className={`px-6 py-3 text-sm font-medium transition duration-200 ${
                     isActive
-                      ? 'bg-black bg-opacity-20'
-                      : 'hover:bg-black hover:bg-opacity-15'
+                      ? 'bg-c13-orange text-white'
+                      : 'text-c13-dark hover:bg-c13-orange hover:text-white'
                   }`}
                 >
                   {item.label}
