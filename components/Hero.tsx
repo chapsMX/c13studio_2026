@@ -58,13 +58,13 @@ export default function Hero() {
             </svg>
           </a>
           <a
-            href="https://x.com/c13studio"
+            href="https://www.tiktok.com/@c13studio"
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-full border-2 border-white hover:bg-c13-orange hover:border-c13-orange transition"
           >
-            <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.654l-5.215-6.817-5.975 6.817H2.306l7.644-8.74L.754 2.25h6.844l4.73 6.255 5.466-6.255zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+              <path d="M20.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.68v13.67a2.89 2.89 0 1 1-5.92-2.92 2.89 2.89 0 0 1 2.31 1.39V9.58a6.54 6.54 0 1 0 10.86 3.9"/>
             </svg>
           </a>
           <a
