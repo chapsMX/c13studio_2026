@@ -8,6 +8,7 @@ const CAROUSEL_IMAGES = Array.from({ length: 6 }, (_, i) => `/images/carousel-dp
 
 function PortfolioCarousel() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
+  const [selectedImage, setSelectedImage] = useState<number | null>(null)
 
   useEffect(() => {
     const container = scrollContainerRef.current
@@ -28,37 +29,61 @@ function PortfolioCarousel() {
   }, [])
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div
-        ref={scrollContainerRef}
-        className="overflow-x-auto scrollbar-hide"
-      >
-        <div className="flex gap-6 pb-4 w-max">
-          {Array.from({ length: 8 }, (_, idx) => (
-            <div
-              key={idx + 1}
-              className="flex-shrink-0 overflow-hidden rounded-lg shadow-md hover:shadow-lg transition"
-            >
-              <img
-                src={`/images/portafolio-dpo-${idx + 1}.jpg`}
-                alt={`Proyecto ${idx + 1}`}
-                className="w-80 h-64 object-cover hover:scale-105 transition duration-300"
-              />
-            </div>
-          ))}
+    <>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          ref={scrollContainerRef}
+          className="overflow-x-auto scrollbar-hide"
+        >
+          <div className="flex gap-6 pb-4 w-max">
+            {Array.from({ length: 8 }, (_, idx) => (
+              <button
+                key={idx + 1}
+                onClick={() => setSelectedImage(idx + 1)}
+                className="flex-shrink-0 overflow-hidden rounded-lg shadow-md hover:shadow-lg transition cursor-pointer"
+              >
+                <img
+                  src={`/images/portafolio-dpo-${idx + 1}.jpg`}
+                  alt={`Proyecto ${idx + 1}`}
+                  className="w-80 h-64 object-cover hover:scale-105 transition duration-300"
+                />
+              </button>
+            ))}
+          </div>
         </div>
+
+        <style>{`
+          .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+          }
+          .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
+        `}</style>
       </div>
 
-      <style>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `}</style>
-    </div>
+      {/* Modal */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            onClick={() => setSelectedImage(null)}
+            className="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 transition"
+          >
+            ✕
+          </button>
+          <img
+            src={`/images/portafolio-dpo-${selectedImage}.jpg`}
+            alt={`Proyecto ${selectedImage}`}
+            className="max-w-4xl max-h-[90vh] object-contain rounded-lg"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
+    </>
   )
 }
 
@@ -240,11 +265,28 @@ export default function Documentacion() {
 
       {/* FAQ Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-c13-dark text-center mb-12">
             Preguntas Frecuentes
           </h2>
-          <div className="space-y-8">
+          <div className="grid md:grid-cols-3 gap-12">
+            {/* Left Column - 1/3 (Video) */}
+            <div className="md:col-span-1 flex items-start justify-center">
+              <div className="w-full aspect-video rounded-lg overflow-hidden shadow-lg">
+                <iframe
+                  src="https://www.tiktok.com/embed/v2/7595769239852682514"
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  allow="autoplay"
+                  allowFullScreen
+                  className="w-full h-full"
+                ></iframe>
+              </div>
+            </div>
+
+            {/* Right Column - 2/3 (FAQ) */}
+            <div className="md:col-span-2 space-y-8">
             {/* FAQ 1 */}
             <div className="border-l-4 border-c13-orange pl-6">
               <h3 className="text-xl font-bold text-c13-dark mb-3">
@@ -338,6 +380,7 @@ export default function Documentacion() {
               <p className="text-gray-700">
                 Lo ideal es iniciar la documentación cuando arranca la obra, en demoliciones o excavaciones. Sin embargo, si la obra ya se encuentra avanzada, podemos realizar la documentación sin problema alguno.
               </p>
+            </div>
             </div>
           </div>
         </div>
