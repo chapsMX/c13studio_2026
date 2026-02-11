@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import './globals.css'
-import GoogleAnalytics from "./Google";
+import analiticas from "./Google";
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={poppins.variable}>
       <head>
-        <GoogleAnalytics />
+        <analiticas />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
       <body className="font-sans">
