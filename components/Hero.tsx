@@ -7,6 +7,7 @@ const CAROUSEL_IMAGES = [
   '/images/carousel-2.jpg',
   '/images/carousel-3.jpg',
   '/images/carousel-4.jpg',
+  '/images/carousel-5.jpg',
 ]
 
 export default function Hero() {
@@ -24,22 +25,12 @@ export default function Hero() {
       {/* Carousel Background */}
       <div className="absolute inset-0 bg-cover bg-center" 
            style={{backgroundImage: `url(${CAROUSEL_IMAGES[currentImage]})`}}>
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/20"></div>
       </div>
-
-      {/* Content */}
+       
+      {/* aquí va el titulo */}
       <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4">
-        <h1 className="text-6xl md:text-7xl font-bold text-white mb-4">
-          c13studio
-        </h1>
-
-        {/* Divider Line */}
-        <div className="w-32 h-0.5 bg-c13-orange mb-6"></div>
-
-        <p className="text-lg md:text-xl text-gray-200 mb-12">
-          Estudio de fotografía y video aéreo
-        </p>
-
+     
         {/* Divider Line - Spacing */}
         <div className="mb-6"></div>
 
