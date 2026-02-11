@@ -273,11 +273,50 @@ export default function Documentacion() {
               <p className="text-gray-700 mb-4">
                 Sí, en caso de realizar dos o más sesiones en un mismo mes para el mismo cliente en diferentes obras ofrecemos el siguiente esquema de descuento por volumen:
               </p>
-              {/* Tabla de descuentos - placeholder */}
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <p className="text-sm text-gray-600">
-                  [Tabla de descuentos por volumen]
-                </p>
+              {/* Tabla de descuentos */}
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse text-sm">
+                  <thead>
+                    <tr className="bg-gray-100 border border-gray-300">
+                      <th className="px-4 py-3 text-left font-bold text-c13-dark border">Cantidad</th>
+                      <th className="px-4 py-3 text-left font-bold text-c13-dark border">Descripción</th>
+                      <th className="px-4 py-3 text-right font-bold text-c13-dark border">Costo Unitario</th>
+                      <th className="px-4 py-3 text-right font-bold text-c13-dark border">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border border-gray-300">
+                      <td className="px-4 py-3 text-gray-700 border">1</td>
+                      <td className="px-4 py-3 text-gray-700 border">Documentación aérea con drone, sesión única</td>
+                      <td className="px-4 py-3 text-right text-gray-700 border">$10,000.00</td>
+                      <td className="px-4 py-3 text-right font-semibold text-c13-dark border">$10,000.00</td>
+                    </tr>
+                    <tr className="border border-gray-300 bg-c13-orange/5">
+                      <td className="px-4 py-3 text-gray-700 border">1</td>
+                      <td className="px-4 py-3 text-gray-700 border">Documentación aérea con drone, 8 sesiones</td>
+                      <td className="px-4 py-3 text-right text-c13-orange font-bold border">$7,500.00</td>
+                      <td className="px-4 py-3 text-right font-bold text-c13-orange border">$7,500.00</td>
+                    </tr>
+                    <tr className="border border-gray-300">
+                      <td className="px-4 py-3 text-gray-700 border">2</td>
+                      <td className="px-4 py-3 text-gray-700 border">Facturación mensual (misma o diferentes obras)</td>
+                      <td className="px-4 py-3 text-right text-gray-700 border">$6,000.00</td>
+                      <td className="px-4 py-3 text-right font-semibold text-c13-dark border">$12,000.00</td>
+                    </tr>
+                    <tr className="border border-gray-300">
+                      <td className="px-4 py-3 text-gray-700 border">3</td>
+                      <td className="px-4 py-3 text-gray-700 border">Facturación mensual (misma o diferentes obras)</td>
+                      <td className="px-4 py-3 text-right text-gray-700 border">$5,750.00</td>
+                      <td className="px-4 py-3 text-right font-semibold text-c13-dark border">$17,250.00</td>
+                    </tr>
+                    <tr className="border border-gray-300">
+                      <td className="px-4 py-3 text-gray-700 border">4</td>
+                      <td className="px-4 py-3 text-gray-700 border">Facturación mensual (misma o diferentes obras)</td>
+                      <td className="px-4 py-3 text-right text-gray-700 border">$5,000.00</td>
+                      <td className="px-4 py-3 text-right font-semibold text-c13-dark border">$20,000.00</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
 
