@@ -18,11 +18,20 @@ export const metadata: Metadata = {
     description: 'Llevamos tus proyectos al siguiente nivel con video y fotografía aérea profesional.',
     type: 'website',
     locale: 'es_MX',
+    images: [
+      {
+        url: '/images/c13social.png',
+        width: 1200,
+        height: 630,
+        alt: 'c13studio | Fotografía y Video Aéreo',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'c13studio | Fotografía y Video Aéreo',
     description: 'Video y fotografía aérea profesional para tu proyecto.',
+    images: ['/images/c13social.png'],
   },
 }
 
