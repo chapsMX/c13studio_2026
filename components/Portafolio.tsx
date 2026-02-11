@@ -1,62 +1,105 @@
 'use client'
 
-import { useState } from 'react'
-
-const PORTFOLIO_IMAGES = [
-  '/images/portfolio-1.jpg',
-  '/images/portfolio-2.jpg',
-  '/images/portfolio-3.jpg',
-  '/images/portfolio-4.jpg',
-  '/images/portfolio-5.jpg',
-  '/images/portfolio-6.jpg',
-]
+import { useEffect, useRef } from 'react'
 
 export default function Portafolio() {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null)
+  const scrollContainer1Ref = useRef<HTMLDivElement>(null)
+  const scrollContainer2Ref = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const container1 = scrollContainer1Ref.current
+    const container2 = scrollContainer2Ref.current
+
+    if (!container1 || !container2) return
+
+    let scrollAmount1 = 0
+    let scrollAmount2 = container2.scrollWidth - container2.clientWidth
+
+    const scroll = () => {
+      // Fila 1: izquierda a derecha
+      scrollAmount1 += 0.5
+      container1.scrollLeft = scrollAmount1
+      if (scrollAmount1 > container1.scrollWidth - container1.clientWidth) {
+        scrollAmount1 = 0
+      }
+
+      // Fila 2: derecha a izquierda
+      scrollAmount2 -= 0.5
+      container2.scrollLeft = scrollAmount2
+      if (scrollAmount2 < 0) {
+        scrollAmount2 = container2.scrollWidth - container2.clientWidth
+      }
+
+      requestAnimationFrame(scroll)
+    }
+
+    const animationId = requestAnimationFrame(scroll)
+    return () => cancelAnimationFrame(animationId)
+  }, [])
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-c13-dark mb-12 text-center">Portafolio</h2>
-
-        {/* Gallery Grid */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {PORTFOLIO_IMAGES.map((image, idx) => (
-            <div
-              key={idx}
-              onClick={() => setSelectedImage(image)}
-              className="aspect-video bg-gray-300 rounded-lg overflow-hidden cursor-pointer hover:opacity-80 transition"
-            >
-              <div className="w-full h-full bg-gradient-to-br from-c13-blue/20 to-c13-orange/20 flex items-center justify-center">
-                <span className="text-gray-400">Imagen {idx + 1}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Lightbox */}
-        {selectedImage && (
-          <div
-            onClick={() => setSelectedImage(null)}
-            className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
-          >
-            <div
-              onClick={(e) => e.stopPropagation()}
-              className="bg-white rounded-lg max-w-4xl w-full overflow-hidden"
-            >
-              <div className="aspect-video bg-gray-300 flex items-center justify-center">
-                <span className="text-gray-400">Imagen expandida</span>
-              </div>
-              <button
-                onClick={() => setSelectedImage(null)}
-                className="absolute top-4 right-4 w-10 h-10 bg-black/50 text-white rounded-full flex items-center justify-center hover:bg-black/70 transition"
-              >
-                ✕
-              </button>
-            </div>
-          </div>
-        )}
+    <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+        <h2 className="text-4xl font-bold text-c13-dark text-center">
+          Nuestro Portafolio
+        </h2>
       </div>
+
+      {/* Row 1 - Left to Right */}
+      <div className="mb-8 overflow-hidden">
+        <div
+          ref={scrollContainer1Ref}
+          className="overflow-x-auto scrollbar-hide"
+        >
+          <div className="flex gap-6 pb-4 w-max px-4 sm:px-6 lg:px-8">
+            {Array.from({ length: 10 }, (_, i) => (
+              <div
+                key={`row1-${i + 1}`}
+                className="flex-shrink-0 overflow-hidden rounded-lg shadow-md hover:shadow-lg transition group cursor-pointer"
+              >
+                <img
+                  src={`/images/portafolio-c13-${i + 1}.jpg`}
+                  alt={`Portafolio ${i + 1}`}
+                  className="w-80 h-64 object-cover group-hover:scale-105 transition duration-300"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Row 2 - Right to Left */}
+      <div className="overflow-hidden">
+        <div
+          ref={scrollContainer2Ref}
+          className="overflow-x-auto scrollbar-hide"
+        >
+          <div className="flex gap-6 pb-4 w-max px-4 sm:px-6 lg:px-8">
+            {Array.from({ length: 10 }, (_, i) => (
+              <div
+                key={`row2-${i + 11}`}
+                className="flex-shrink-0 overflow-hidden rounded-lg shadow-md hover:shadow-lg transition group cursor-pointer"
+              >
+                <img
+                  src={`/images/portafolio-c13-${i + 11}.jpg`}
+                  alt={`Portafolio ${i + 11}`}
+                  className="w-80 h-64 object-cover group-hover:scale-105 transition duration-300"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <style>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
     </section>
   )
 }

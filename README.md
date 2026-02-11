@@ -1,67 +1,83 @@
-# c13studio - Fotografía y Video Aéreo
+# c13studio - Portfolio & Documentation Site
 
-Website profesional para c13studio - especialistas en fotografía y video aéreo con drones.
+![c13studio](./public/images/logo.png)
 
-## Tech Stack
+Sitio web profesional para **c13studio**, estudio especializado en fotografía y video aéreo con drones.
 
-- **Next.js 14** (App Router)
-- **TypeScript**
-- **Tailwind CSS**
-- **Resend** (Email)
-- **Vercel** (Deployment)
+## 🚀 Características
 
-## Estructura
+### Home
+- **Header Navegable** - Logo, menú principal con detección de sección activa
+- **Hero Section** - Carrusel automático con 6 imágenes, iconos sociales con backdrop blur, botón WhatsApp
+- **Nosotros** - Fondo oscuro, 3 cajas de servicios (Arquitectura, Inmobiliario, Audiovisuales) con gradientes
+- **Portafolio Dual Carousel** - 20 imágenes en 2 filas:
+  - Fila 1: Scroll izquierda → derecha
+  - Fila 2: Scroll derecha → izquierda
+- **Clientes Carousel** - Rotación automática de 10 logos con scroll horizontal
+- **Contacto Form** - Integración con Resend, emails enviados a info@c13studio.mx
+- **Footer** - Links de redes sociales (Instagram, TikTok, YouTube, Facebook, WhatsApp)
 
+### Documentación de Obra (`/documentacion`)
+- **Carrusel Hero** - 6 imágenes de proyectos con rotación automática
+- **Sección Promoción 2026** - 
+  - Layout 2 columnas (2/3 contenido, 1/3 box naranja)
+  - Precio: $7,500/sesión (promoción) vs $10,000 normal
+  - Botones: "Contratar" (WhatsApp) + "Descargar ejemplo"
+  - Tabla de descuentos por volumen
+  - Consideraciones de servicio
+- **Galería de Proyectos** - Carrusel horizontal con 8 imágenes + modal fullscreen al click
+- **Preguntas Frecuentes** - Layout 2 columnas:
+  - 1/3: Video TikTok embebido (9:16)
+  - 2/3: 5 preguntas frecuentes con tabla de descuentos
+
+## 🎨 Diseño
+
+**Colores Institucionales:**
+- Azul: `#66a9df`
+- Naranja (CTA): `#d5662c`
+- Oscuro (texto): `#2f2c3c`
+- Blanco: `#ffffff`
+
+**Tipografía:** Poppins
+
+**Componentes Reutilizables:**
+- Header con navegación sticky
+- Footer con redes sociales
+- Carousels horizontales (automáticos y manuales)
+- Forms con validación Resend
+
+## 📦 Stack
+
+- **Framework:** Next.js 14 (App Router)
+- **Styling:** Tailwind CSS
+- **Typings:** TypeScript
+- **Email:** Resend
+- **Hosting:** Vercel
+- **Version Control:** GitHub
+
+## 🔧 Configuración
+
+### Variables de Entorno (.env.local)
 ```
-app/
-  ├── page.tsx          # Home (Nosotros, Portafolio, Clientes, Contacto)
-  ├── blog/page.tsx     # Blog
-  ├── documentacion/    # Plan de documentación
-  ├── sitemap.ts        # SEO sitemap
-  ├── robots.ts         # Robots.txt
-  └── layout.tsx        # Root layout con meta tags
-
-components/
-  ├── Header.tsx        # Sticky header con navegación
-  ├── Hero.tsx          # Carrusel 16:9 + redes
-  ├── Nosotros.tsx      # Sobre nosotros + servicios + contador
-  ├── Portafolio.tsx    # Galería de trabajos
-  ├── Clientes.tsx      # Carrusel de clientes
-  ├── Divider.tsx       # Sección divisor con quote
-  ├── Contacto.tsx      # Formulario de contacto
-  └── Footer.tsx        # Footer + redes
+RESEND_API_KEY=re_QDRAimto_HeHzVbrfm2fdCTWPRBkVmQzN
+ADMIN_EMAIL=info@c13studio.mx
 ```
 
-## Colores
-
-- **Azul:** #66a9df
-- **Morado oscuro:** #2f2c3c
-- **Naranja:** #d5662c
-- **Blanco:** #ffffff
-
-## SEO
-
-✅ Meta tags Open Graph
-✅ Meta tags Twitter
-✅ Sitemap dinámico
-✅ Robots.txt
-✅ Sin redirects
-✅ Rutas limpias
-
-## Desarrollo
-
+### Instalación
 ```bash
 npm install
-npm run dev  # http://localhost:3000
+npm run dev
 ```
 
-## Build
+## 📧 Contacto
 
-```bash
-npm run build
-npm start
-```
+- **Email:** info@c13studio.mx
+- **WhatsApp:** +52 55 7250 7711
+- **Instagram:** @c13studio
+- **TikTok:** @c13studio
+- **YouTube:** @c13studiomx
+- **Facebook:** c13studio
 
----
+## 📄 Licencia
 
-Made with 🚁 for c13studio
+Todos los derechos reservados © 2026 c13studio
