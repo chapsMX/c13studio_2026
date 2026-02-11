@@ -1,10 +1,11 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export default function Portafolio() {
   const scrollContainer1Ref = useRef<HTMLDivElement>(null)
   const scrollContainer2Ref = useRef<HTMLDivElement>(null)
+  const [selectedImage, setSelectedImage] = useState<number | null>(null)
 
   useEffect(() => {
     const container1 = scrollContainer1Ref.current
@@ -53,16 +54,17 @@ export default function Portafolio() {
         >
           <div className="flex gap-6 pb-4 w-max px-4 sm:px-6 lg:px-8">
             {Array.from({ length: 10 }, (_, i) => (
-              <div
+              <button
                 key={`row1-${i + 1}`}
-                className="flex-shrink-0 overflow-hidden rounded-lg shadow-md hover:shadow-lg transition group cursor-pointer"
+                onClick={() => setSelectedImage(i + 1)}
+                className="flex-shrink-0 overflow-hidden rounded-lg shadow-md hover:shadow-lg transition group cursor-pointer border-0 bg-transparent p-0"
               >
                 <img
                   src={`/images/portafolio-c13-${i + 1}.jpg`}
                   alt={`Portafolio ${i + 1}`}
                   className="w-80 h-64 object-cover group-hover:scale-105 transition duration-300"
                 />
-              </div>
+              </button>
             ))}
           </div>
         </div>
@@ -76,20 +78,42 @@ export default function Portafolio() {
         >
           <div className="flex gap-6 pb-4 w-max px-4 sm:px-6 lg:px-8">
             {Array.from({ length: 10 }, (_, i) => (
-              <div
+              <button
                 key={`row2-${i + 11}`}
-                className="flex-shrink-0 overflow-hidden rounded-lg shadow-md hover:shadow-lg transition group cursor-pointer"
+                onClick={() => setSelectedImage(i + 11)}
+                className="flex-shrink-0 overflow-hidden rounded-lg shadow-md hover:shadow-lg transition group cursor-pointer border-0 bg-transparent p-0"
               >
                 <img
                   src={`/images/portafolio-c13-${i + 11}.jpg`}
                   alt={`Portafolio ${i + 11}`}
                   className="w-80 h-64 object-cover group-hover:scale-105 transition duration-300"
                 />
-              </div>
+              </button>
             ))}
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            onClick={() => setSelectedImage(null)}
+            className="absolute top-4 right-4 text-white text-4xl hover:text-gray-300 transition bg-transparent border-0 cursor-pointer"
+          >
+            ✕
+          </button>
+          <img
+            src={`/images/portafolio-c13-${selectedImage}.jpg`}
+            alt={`Portafolio ${selectedImage}`}
+            className="max-w-4xl max-h-[90vh] object-contain rounded-lg"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
 
       <style>{`
         .scrollbar-hide::-webkit-scrollbar {
