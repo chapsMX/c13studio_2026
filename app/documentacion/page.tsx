@@ -271,16 +271,16 @@ export default function Documentacion() {
           </h2>
           <div className="grid md:grid-cols-3 gap-12">
             {/* Left Column - 1/3 (Video) */}
-            <div className="md:col-span-1 flex items-start justify-center">
-              <div className="w-full aspect-video rounded-lg overflow-hidden shadow-lg">
+            <div className="md:col-span-1 flex items-start justify-center sticky top-20">
+              <div className="w-full rounded-lg overflow-hidden shadow-lg" style={{height: '700px'}}>
                 <iframe
                   src="https://www.tiktok.com/embed/v2/7595769239852682514"
                   width="100%"
-                  height="100%"
+                  height="700"
                   frameBorder="0"
                   allow="autoplay"
                   allowFullScreen
-                  className="w-full h-full"
+                  className="w-full"
                 ></iframe>
               </div>
             </div>
