@@ -48,10 +48,10 @@ export default function Header() {
         {/* Logo - Izquierda */}
         <Link href="/" className="relative h-12 w-auto flex-shrink-0">
           <Image
-            src="/images/logo.png"
+            src="/images/c13Texto.png"
             alt="c13studio"
-            height={48}
-            width={140}
+            height={128}
+            width={300}
             className="object-contain"
           />
         </Link>
