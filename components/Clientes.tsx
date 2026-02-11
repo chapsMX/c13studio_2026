@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 
-const CLIENTS = Array(12).fill(null) // Placeholder para logos
+const CLIENTS = Array(10).fill(null) // 10 clientes
 
 export default function Clientes() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
@@ -13,7 +13,7 @@ export default function Clientes() {
 
     let scrollAmount = 0
     const scroll = () => {
-      scrollAmount += 1
+      scrollAmount += 0.5
       container.scrollLeft = scrollAmount
       if (scrollAmount > container.scrollWidth - container.clientWidth) {
         scrollAmount = 0
@@ -29,8 +29,11 @@ export default function Clientes() {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-c13-dark mb-4">
+            Nuestros Clientes
+          </h2>
           <p className="text-lg text-c13-dark">
-            Estas son algunas de las empresas que han confiado en nuestro trabajo:
+            Estas son algunas de las empresas que han confiado en nuestro trabajo.
           </p>
         </div>
 
@@ -39,13 +42,19 @@ export default function Clientes() {
           ref={scrollContainerRef}
           className="overflow-x-auto scrollbar-hide"
         >
-          <div className="flex gap-12 pb-4">
+          <div className="flex gap-8 pb-4">
             {CLIENTS.map((_, idx) => (
               <div
                 key={idx}
-                className="flex-shrink-0 w-32 h-16 bg-gray-100 rounded-lg flex items-center justify-center"
+                className="flex-shrink-0 overflow-hidden rounded-lg shadow-md hover:shadow-lg transition"
               >
-                <span className="text-gray-400">Cliente {idx + 1}</span>
+                <img
+                  src={`/images/clientes${idx + 1}.jpg`}
+                  alt={`Cliente ${idx + 1}`}
+                  width={400}
+                  height={200}
+                  className="w-80 h-40 object-cover"
+                />
               </div>
             ))}
           </div>

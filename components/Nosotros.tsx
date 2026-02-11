@@ -112,33 +112,6 @@ export default function Nosotros() {
         </div>
         <div className="py-12"></div>
       </div>
-
-      {/* Clients Carousel */}
-      <div className="w-full bg-gray-50 py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-c13-dark text-center mb-6">
-            Nuestros Clientes
-          </h2>
-          <p className="text-lg text-c13-dark text-center max-w-3xl mx-auto">
-            Estas son algunas de las empresas que han confiado en nuestro trabajo.
-          </p>
-        </div>
-        <div className="w-full overflow-x-auto pb-4">
-          <div className="flex gap-6 px-4 sm:px-6 lg:px-8 w-max ml-4 sm:ml-6 lg:ml-8">
-            {Array.from({ length: 10 }, (_, i) => (
-              <div key={i + 1} className="flex-shrink-0">
-                <img
-                  src={`/images/clientes${i + 1}.jpg`}
-                  alt={`Cliente ${i + 1}`}
-                  width={400}
-                  height={200}
-                  className="h-32 w-64 object-cover rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition duration-300"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
     </section>
   )
 }
