@@ -59,9 +59,10 @@ Sitio web profesional para **c13studio**, estudio especializado en fotografía y
 
 ### Variables de Entorno (.env.local)
 ```
-RESEND_API_KEY=re_QDRAimto_HeHzVbrfm2fdCTWPRBkVmQzN
-ADMIN_EMAIL=info@c13studio.mx
+RESEND_API_KEY=<TU_API_KEY>
+ADMIN_EMAIL=<TU_EMAIL>
 ```
+⚠️ **NUNCA** commitar .env.local a GitHub
 
 ### Instalación
 ```bash
