@@ -3,10 +3,13 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
   const [activeSection, setActiveSection] = useState<string>('')
+  const pathname = usePathname()
+  const isHome = pathname === '/'
 
   const navItems = [
     { label: 'Nosotros', href: '#nosotros', id: 'nosotros' },
@@ -16,6 +19,14 @@ export default function Header() {
     { label: 'Documentación de obra', href: '/documentacion', id: 'documentacion' },
     { label: 'Contacto', href: '#contacto', id: 'contacto' },
   ]
+
+  const getHref = (item: typeof navItems[0]) => {
+    // Si el link es un anchor y NO estamos en home, navega a home + anchor
+    if (item.href.startsWith('#') && !isHome) {
+      return `/${item.href}`
+    }
+    return item.href
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,7 +74,7 @@ export default function Header() {
             return (
               <Link
                 key={item.href}
-                href={item.href}
+                href={getHref(item)}
                 className={`px-5 py-3 text-sm font-medium transition duration-200 ${
                   isActive
                     ? 'bg-c13-orange text-white'
@@ -106,7 +117,7 @@ export default function Header() {
               return (
                 <Link
                   key={item.href}
-                  href={item.href}
+                  href={getHref(item)}
                   onClick={() => setIsOpen(false)}
                   className={`px-6 py-3 text-sm font-medium transition duration-200 ${
                     isActive
