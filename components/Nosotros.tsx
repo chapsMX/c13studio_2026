@@ -93,12 +93,14 @@ export default function Nosotros() {
         </div>
       </div>
 
-      {/* Video Section */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <h2 className="text-3xl md:text-4xl font-bold text-c13-dark text-center mb-8">
-          Demo Reel
-        </h2>
-        <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
+      {/* Video Section - Full Width */}
+      <div className="w-full bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-c13-dark text-center mb-8">
+            Demo Reel
+          </h2>
+        </div>
+        <div className="w-full aspect-video overflow-hidden shadow-lg">
           <iframe
             width="100%"
             height="100%"
@@ -108,6 +110,7 @@ export default function Nosotros() {
             allowFullScreen
           ></iframe>
         </div>
+        <div className="py-12"></div>
       </div>
 
       {/* Clients Carousel */}
