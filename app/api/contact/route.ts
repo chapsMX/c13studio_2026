@@ -18,7 +18,7 @@ export async function POST(request: Request) {
     await resend.emails.send({
       from: 'noreply@c13studio.mx',
       to: process.env.ADMIN_EMAIL || 'info@c13studio.mx',
-      replyTo: email,
+      reply_to: email,
       subject: `Nuevo mensaje de contacto: ${nombre}`,
       html: `
         <h2>Nuevo mensaje de contacto</h2>
