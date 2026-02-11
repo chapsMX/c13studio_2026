@@ -44,9 +44,7 @@ export default function Nosotros() {
           {/* Desarrollo Inmobiliario */}
           <div className="group p-8 rounded-lg text-center border-2 border-white/30 hover:border-white hover:shadow-lg transition duration-300 bg-white/5">
             <div className="w-16 h-16 bg-white/20 rounded-lg mb-6 flex items-center justify-center mx-auto group-hover:scale-110 transition duration-300">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path d="M12 2v20M8 6h8M8 10h8M8 14h8M8 18h8M2 6h2v16H2M20 6h2v16h-2M6 2h12v2H6z"/>
-              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-white"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
             </div>
             <h3 className="text-2xl font-bold text-white mb-4">Desarrollo Inmobiliario</h3>
             <p className="text-white/80 leading-relaxed">
@@ -58,9 +56,7 @@ export default function Nosotros() {
           {/* Producciones Audiovisuales */}
           <div className="group p-8 rounded-lg text-center border-2 border-white/30 hover:border-white hover:shadow-lg transition duration-300 bg-white/5">
             <div className="w-16 h-16 bg-white/20 rounded-lg mb-6 flex items-center justify-center mx-auto group-hover:scale-110 transition duration-300">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path d="M4 8v8h16V8H4M8 5l-2 3h12l-2-3M6 16v2h12v-2M9 12a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/>
-              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-white"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg>
             </div>
             <h3 className="text-2xl font-bold text-white mb-4">Producciones Audiovisuales</h3>
             <p className="text-white/80 leading-relaxed">
