@@ -4,8 +4,8 @@ import Image from 'next/image'
 
 export default function Nosotros() {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Header with Logo */}
         <div className="text-center mb-16">
           <div className="flex justify-center mb-6">
@@ -71,34 +71,65 @@ export default function Nosotros() {
             </p>
           </div>
         </div>
+      </div>
 
-        {/* Counter */}
-        <div className="grid md:grid-cols-3 gap-8 py-12 border-y border-gray-200">
-          <div className="text-center">
-            <p className="text-5xl font-bold text-c13-orange mb-2">15+</p>
-            <p className="text-gray-600 text-lg">Años de experiencia</p>
-          </div>
-          <div className="text-center">
-            <p className="text-5xl font-bold text-c13-blue mb-2">100+</p>
-            <p className="text-gray-600 text-lg">Clientes satisfechos</p>
-          </div>
-          <div className="text-center">
-            <p className="text-5xl font-bold text-c13-dark mb-2">5000+</p>
-            <p className="text-gray-600 text-lg">Horas de vuelo</p>
+      {/* Counter - Full Width */}
+      <div className="w-full bg-gray-100 py-12">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <p className="text-5xl font-bold text-c13-orange mb-2">15+</p>
+              <p className="text-gray-600 text-lg">Años de experiencia</p>
+            </div>
+            <div className="text-center">
+              <p className="text-5xl font-bold text-c13-blue mb-2">100+</p>
+              <p className="text-gray-600 text-lg">Clientes satisfechos</p>
+            </div>
+            <div className="text-center">
+              <p className="text-5xl font-bold text-c13-dark mb-2">5000+</p>
+              <p className="text-gray-600 text-lg">Horas de vuelo</p>
+            </div>
           </div>
         </div>
+      </div>
 
-        {/* Video */}
-        <div className="mt-16">
-          <div className="aspect-video rounded-lg overflow-hidden">
-            <iframe
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/d2VBjb_fQ00"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+      {/* Video Section */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <h2 className="text-3xl md:text-4xl font-bold text-c13-dark text-center mb-8">
+          Demo Reel
+        </h2>
+        <div className="aspect-video rounded-lg overflow-hidden shadow-lg">
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/d2VBjb_fQ00"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </div>
+
+      {/* Clients Carousel */}
+      <div className="w-full bg-gray-50 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-c13-dark text-center mb-12">
+            Nuestros Clientes
+          </h2>
+          <div className="overflow-x-auto pb-4 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+            <div className="flex gap-6 w-max">
+              {Array.from({ length: 10 }, (_, i) => (
+                <div key={i + 1} className="flex-shrink-0">
+                  <img
+                    src={`/images/clientes${i + 1}.jpg`}
+                    alt={`Cliente ${i + 1}`}
+                    width={400}
+                    height={200}
+                    className="h-40 w-80 object-cover rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition duration-300"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
