@@ -5,15 +5,38 @@ import { useState } from 'react'
 export default function Contacto() {
   const [formData, setFormData] = useState({ nombre: '', email: '', mensaje: '' })
   const [loading, setLoading] = useState(false)
+  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [message, setMessage] = useState('')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
-    // Contacto logic aquí (Resend integration)
-    setTimeout(() => {
+    setStatus('idle')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setStatus('success')
+        setMessage('¡Mensaje enviado! Nos pondremos en contacto pronto.')
+        setFormData({ nombre: '', email: '', mensaje: '' })
+        setTimeout(() => setStatus('idle'), 5000)
+      } else {
+        setStatus('error')
+        setMessage(data.error || 'Error al enviar el mensaje')
+      }
+    } catch (error) {
+      setStatus('error')
+      setMessage('Error de conexión. Intenta de nuevo.')
+    } finally {
       setLoading(false)
-      setFormData({ nombre: '', email: '', mensaje: '' })
-    }, 1000)
+    }
   }
 
   return (
@@ -27,6 +50,18 @@ export default function Contacto() {
             Contáctanos y hagámoslo realidad.
           </p>
         </div>
+
+        {status === 'success' && (
+          <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
+            {message}
+          </div>
+        )}
+
+        {status === 'error' && (
+          <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
+            {message}
+          </div>
+        )}
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
