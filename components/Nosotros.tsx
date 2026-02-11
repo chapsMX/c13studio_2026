@@ -4,22 +4,19 @@ import Image from 'next/image'
 
 export default function Nosotros() {
   return (
-    <section className="bg-c13-blue">
+    <section className="bg-c13-dark">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Header with Logo */}
         <div className="text-center mb-16">
-          <div className="flex justify-center mb-6">
+          <div className="flex justify-center mb-8">
             <Image
-              src="/images/c13studioLogot.png"
+              src="/images/logo.png"
               alt="c13studio"
-              height={100}
-              width={100}
-              className="object-contain brightness-0"
+              height={200}
+              width={200}
+              className="object-contain"
             />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-            Sobre c13studio
-          </h2>
           <p className="text-lg md:text-xl text-white leading-relaxed max-w-4xl mx-auto mb-8">
             Somos un estudio de fotografía y video aéreo. Llevamos más de 15 años colaborando 
             con casas productoras, estudios de televisión, arquitectos y desarrolladores inmobiliarios 
@@ -68,20 +65,20 @@ export default function Nosotros() {
       </div>
 
       {/* Counter - Full Width */}
-      <div className="w-full bg-white/10 py-12">
+      <div className="w-full bg-c13-blue py-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
               <p className="text-5xl font-bold text-c13-orange mb-2">15+</p>
-              <p className="text-white/80 text-lg">Años de experiencia</p>
+              <p className="text-white/90 text-lg">Años de experiencia</p>
             </div>
             <div className="text-center">
               <p className="text-5xl font-bold text-white mb-2">100+</p>
-              <p className="text-white/80 text-lg">Clientes satisfechos</p>
+              <p className="text-white/90 text-lg">Clientes satisfechos</p>
             </div>
             <div className="text-center">
               <p className="text-5xl font-bold text-white mb-2">5000+</p>
-              <p className="text-white/80 text-lg">Horas de vuelo</p>
+              <p className="text-white/90 text-lg">Horas de vuelo</p>
             </div>
           </div>
         </div>

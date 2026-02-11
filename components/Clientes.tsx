@@ -53,7 +53,7 @@ export default function Clientes() {
                   alt={`Cliente ${idx + 1}`}
                   width={400}
                   height={200}
-                  className="w-80 h-40 object-cover"
+                  className="w-80 h-40 object-cover object-bottom"
                 />
               </div>
             ))}
