@@ -10,11 +10,11 @@ export default function Nosotros() {
         <div className="text-center mb-16">
           <div className="flex justify-center mb-6">
             <Image
-              src="/images/logo.png"
+              src="/images/c13studioLogot.png"
               alt="c13studio"
-              height={60}
-              width={180}
-              className="object-contain brightness-0 invert"
+              height={100}
+              width={100}
+              className="object-contain brightness-0"
             />
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
