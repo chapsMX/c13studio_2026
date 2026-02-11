@@ -5,16 +5,19 @@ import { useEffect, useRef, useState } from 'react'
 export default function Portafolio() {
   const scrollContainer1Ref = useRef<HTMLDivElement>(null)
   const scrollContainer2Ref = useRef<HTMLDivElement>(null)
+  const scrollContainer3Ref = useRef<HTMLDivElement>(null)
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
 
   useEffect(() => {
     const container1 = scrollContainer1Ref.current
     const container2 = scrollContainer2Ref.current
+    const container3 = scrollContainer3Ref.current
 
-    if (!container1 || !container2) return
+    if (!container1 || !container2 || !container3) return
 
     let scrollAmount1 = 0
     let scrollAmount2 = container2.scrollWidth - container2.clientWidth
+    let scrollAmount3 = 0
 
     const scroll = () => {
       // Fila 1: izquierda a derecha
@@ -29,6 +32,13 @@ export default function Portafolio() {
       container2.scrollLeft = scrollAmount2
       if (scrollAmount2 < 0) {
         scrollAmount2 = container2.scrollWidth - container2.clientWidth
+      }
+
+      // Fila 3: izquierda a derecha
+      scrollAmount3 += 0.5
+      container3.scrollLeft = scrollAmount3
+      if (scrollAmount3 > container3.scrollWidth - container3.clientWidth) {
+        scrollAmount3 = 0
       }
 
       requestAnimationFrame(scroll)
@@ -62,7 +72,7 @@ export default function Portafolio() {
                 <img
                   src={`/images/portafolio-c13-${i + 1}.jpg`}
                   alt={`Portafolio ${i + 1}`}
-                  className="w-80 h-64 object-cover group-hover:scale-105 transition duration-300"
+                  className="w-64 h-80 object-cover group-hover:scale-105 transition duration-300"
                 />
               </button>
             ))}
@@ -71,7 +81,7 @@ export default function Portafolio() {
       </div>
 
       {/* Row 2 - Right to Left */}
-      <div className="overflow-hidden">
+      <div className="mb-8 overflow-hidden">
         <div
           ref={scrollContainer2Ref}
           className="overflow-x-auto scrollbar-hide"
@@ -86,7 +96,31 @@ export default function Portafolio() {
                 <img
                   src={`/images/portafolio-c13-${i + 11}.jpg`}
                   alt={`Portafolio ${i + 11}`}
-                  className="w-80 h-64 object-cover group-hover:scale-105 transition duration-300"
+                  className="w-64 h-80 object-cover group-hover:scale-105 transition duration-300"
+                />
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Row 3 - Left to Right */}
+      <div className="overflow-hidden">
+        <div
+          ref={scrollContainer3Ref}
+          className="overflow-x-auto scrollbar-hide"
+        >
+          <div className="flex gap-6 pb-4 w-max px-4 sm:px-6 lg:px-8">
+            {Array.from({ length: 10 }, (_, i) => (
+              <button
+                key={`row3-${i + 21}`}
+                onClick={() => setSelectedImage(i + 21)}
+                className="flex-shrink-0 overflow-hidden rounded-lg shadow-md hover:shadow-lg transition group cursor-pointer border-0 bg-transparent p-0"
+              >
+                <img
+                  src={`/images/portafolio-c13-${i + 21}.jpg`}
+                  alt={`Portafolio ${i + 21}`}
+                  className="w-64 h-80 object-cover group-hover:scale-105 transition duration-300"
                 />
               </button>
             ))}
