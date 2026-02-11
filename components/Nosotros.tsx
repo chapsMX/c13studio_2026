@@ -30,8 +30,8 @@ export default function Nosotros() {
         {/* Services Grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {/* Arquitectura */}
-          <div className="p-8 bg-gray-50 rounded-lg text-center">
-            <div className="w-16 h-16 bg-c13-blue rounded-lg mb-6 flex items-center justify-center mx-auto">
+          <div className="group p-8 rounded-lg text-center border-2 border-c13-blue/30 hover:border-c13-blue hover:shadow-lg transition duration-300 bg-gradient-to-b from-c13-blue/5 to-transparent">
+            <div className="w-16 h-16 bg-gradient-to-br from-c13-blue to-c13-blue/70 rounded-lg mb-6 flex items-center justify-center mx-auto group-hover:scale-110 transition duration-300">
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                 <path d="M3 12h18M3 6h18M3 18h18M5 3v18M19 3v18M8 3v5M12 3v5M16 3v5"/>
               </svg>
@@ -44,8 +44,8 @@ export default function Nosotros() {
           </div>
 
           {/* Desarrollo Inmobiliario */}
-          <div className="p-8 bg-gray-50 rounded-lg text-center">
-            <div className="w-16 h-16 bg-c13-orange rounded-lg mb-6 flex items-center justify-center mx-auto">
+          <div className="group p-8 rounded-lg text-center border-2 border-c13-orange/30 hover:border-c13-orange hover:shadow-lg transition duration-300 bg-gradient-to-b from-c13-orange/5 to-transparent">
+            <div className="w-16 h-16 bg-gradient-to-br from-c13-orange to-c13-orange/70 rounded-lg mb-6 flex items-center justify-center mx-auto group-hover:scale-110 transition duration-300">
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                 <path d="M12 2v20M8 6h8M8 10h8M8 14h8M8 18h8M2 6h2v16H2M20 6h2v16h-2M6 2h12v2H6z"/>
               </svg>
@@ -58,8 +58,8 @@ export default function Nosotros() {
           </div>
 
           {/* Producciones Audiovisuales */}
-          <div className="p-8 bg-gray-50 rounded-lg text-center">
-            <div className="w-16 h-16 bg-c13-dark rounded-lg mb-6 flex items-center justify-center mx-auto">
+          <div className="group p-8 rounded-lg text-center border-2 border-c13-dark/30 hover:border-c13-dark hover:shadow-lg transition duration-300 bg-gradient-to-b from-c13-dark/5 to-transparent">
+            <div className="w-16 h-16 bg-gradient-to-br from-c13-dark to-c13-dark/70 rounded-lg mb-6 flex items-center justify-center mx-auto group-hover:scale-110 transition duration-300">
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
                 <path d="M4 8v8h16V8H4M8 5l-2 3h12l-2-3M6 16v2h12v-2M9 12a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/>
               </svg>
