@@ -106,6 +106,18 @@ export default function Documentacion() {
           <div className="grid md:grid-cols-3 gap-12">
             {/* Left Column - 2/3 */}
             <div className="md:col-span-2">
+              <h2 className="text-4xl font-bold text-c13-dark mb-4">
+                Promoción 2026
+              </h2>
+              <div className="mb-8">
+                <p className="text-xl text-c13-dark font-semibold">
+                  Contrata 8 sesiones y paga <span className="text-c13-orange">$7,500.00</span> por cada una.
+                </p>
+                <p className="text-sm text-gray-600 mt-2">
+                  <span className="line-through">Precio normal: $10,000.00 por sesión</span>
+                </p>
+              </div>
+
               <div className="space-y-6 text-c13-dark leading-relaxed">
                 <p>
                   En el 85% de las obras se delega la documentación de los procesos a los residentes de obra, quienes resuelven el problema tomando fotos con un equipo celular lo cual resulta en contar con fotos de mala calidad así como inconsistencia en el proceso. Conscientes de la importancia que tiene la documentación de procesos de obra en c13studio hemos desarrollado un registro profesional y constante del avance de obra a través de fotografía aérea y video aéreo.
@@ -226,17 +238,68 @@ export default function Documentacion() {
         <PortfolioCarousel />
       </section>
 
-      {/* FAQ Section - Placeholder */}
+      {/* FAQ Section */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-c13-dark text-center mb-12">
             Preguntas Frecuentes
           </h2>
-          <div className="space-y-6">
-            {/* FAQ items will be added here */}
-            <p className="text-center text-gray-500">
-              Contenido próximamente...
-            </p>
+          <div className="space-y-8">
+            {/* FAQ 1 */}
+            <div className="border-l-4 border-c13-orange pl-6">
+              <h3 className="text-xl font-bold text-c13-dark mb-3">
+                ¿Emiten factura por los servicios ofrecidos?
+              </h3>
+              <p className="text-gray-700">
+                Sí, somos una empresa debidamente establecida y cumplimos con la normatividad fiscal.
+              </p>
+            </div>
+
+            {/* FAQ 2 */}
+            <div className="border-l-4 border-c13-orange pl-6">
+              <h3 className="text-xl font-bold text-c13-dark mb-3">
+                ¿Qué formas de pago aceptan y cómo se pagan las sesiones?
+              </h3>
+              <p className="text-gray-700">
+                Al término del mes realizamos una factura por el total de las sesiones realizadas. Las formas de pago aceptadas son depósito bancario y transferencia electrónica.
+              </p>
+            </div>
+
+            {/* FAQ 3 */}
+            <div className="border-l-4 border-c13-orange pl-6">
+              <h3 className="text-xl font-bold text-c13-dark mb-3">
+                ¿Tengo dos o más obras, ofrecen algún descuento adicional por volumen?
+              </h3>
+              <p className="text-gray-700 mb-4">
+                Sí, en caso de realizar dos o más sesiones en un mismo mes para el mismo cliente en diferentes obras ofrecemos el siguiente esquema de descuento por volumen:
+              </p>
+              {/* Tabla de descuentos - placeholder */}
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <p className="text-sm text-gray-600">
+                  [Tabla de descuentos por volumen]
+                </p>
+              </div>
+            </div>
+
+            {/* FAQ 4 */}
+            <div className="border-l-4 border-c13-orange pl-6">
+              <h3 className="text-xl font-bold text-c13-dark mb-3">
+                ¿Existe algún número mínimo de sesiones para contratar?
+              </h3>
+              <p className="text-gray-700">
+                No, nuestro servicio puede ser contratado por una sola sesión. Sin embargo, el costo por sesión será de $10,000.00 MXN por visita. Para que la promoción sea válida es necesario contratar un mínimo de 8 sesiones. La mayoría de nuestros clientes nos contratan durante toda la obra.
+              </p>
+            </div>
+
+            {/* FAQ 5 */}
+            <div className="border-l-4 border-c13-orange pl-6">
+              <h3 className="text-xl font-bold text-c13-dark mb-3">
+                ¿Mi obra ya arrancó y va avanzada, aún así pueden realizar la documentación?
+              </h3>
+              <p className="text-gray-700">
+                Lo ideal es iniciar la documentación cuando arranca la obra, en demoliciones o excavaciones. Sin embargo, si la obra ya se encuentra avanzada, podemos realizar la documentación sin problema alguno.
+              </p>
+            </div>
           </div>
         </div>
       </section>
