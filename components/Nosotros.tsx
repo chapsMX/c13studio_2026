@@ -5,10 +5,10 @@ import Image from 'next/image'
 export default function Nosotros() {
   return (
     <section className="bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         {/* Header with Logo */}
-        <div className="text-center mb-16">
-          <div className="flex justify-center mb-6">
+        <div className="text-center mb-2">
+          <div className="flex justify-center mb-2">
             <Image
               src="/images/logo.png"
               alt="c13studio"
@@ -17,8 +17,8 @@ export default function Nosotros() {
               className="object-contain"
             />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-c13-dark mb-8">
-            Sobre c13studio
+          <h2 className="text-4xl md:text-5xl font-bold text-c13-dark mb-2">
+           c13studio
           </h2>
           <p className="text-lg md:text-xl text-c13-dark leading-relaxed max-w-4xl mx-auto mb-8">
             Somos un estudio de fotografía y video aéreo. Llevamos más de 15 años colaborando 
