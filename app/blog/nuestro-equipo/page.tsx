@@ -168,23 +168,33 @@ export default function PostNuestroEquipo() {
                 </div>
 
                 {/* CTA Section */}
-                <div className="pt-12 mt-8 space-y-6 bg-gradient-to-r from-c13-blue/5 to-c13-orange/5 p-8 rounded-lg border border-gray-100">
-                  <p className="text-gray-700 leading-relaxed">
-                    Puedes conocer más sobre nuestro servicio de documentación de obra en{' '}
-                    <Link href="/documentacion" className="text-c13-orange font-bold hover:underline">
-                      documentación de obra
+                <div className="pt-12 mt-12 space-y-8 bg-gradient-to-br from-c13-blue/10 via-c13-blue/5 to-c13-orange/10 p-12 rounded-xl border-2 border-c13-orange">
+                  <div className="space-y-4">
+                    <h3 className="text-2xl font-bold text-c13-dark">
+                      ¿Listo para llevar tu proyecto al siguiente nivel?
+                    </h3>
+                    <p className="text-lg text-gray-700 leading-relaxed">
+                      Conoce más sobre nuestro servicio especializado de documentación de obra o contáctanos para discutir tu proyecto específico.
+                    </p>
+                  </div>
+
+                  {/* CTA Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                    <Link 
+                      href="/documentacion"
+                      className="flex-1 bg-c13-orange hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-lg text-center text-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
+                    >
+                      Ver Documentación de Obra
                     </Link>
-                    {' '}o{' '}
                     <a 
                       href="https://wa.me/5215549429843?text=Hola%20c13studio%2C%20me%20gustaría%20conocer%20más%20sobre%20sus%20servicios."
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-c13-orange font-bold hover:underline"
+                      className="flex-1 bg-white border-2 border-c13-orange hover:bg-orange-50 text-c13-orange font-bold py-4 px-8 rounded-lg text-center text-lg transition-all duration-200 shadow-lg hover:shadow-xl"
                     >
-                      entrar en contacto
+                      Contactar por WhatsApp
                     </a>
-                    {' '}si requieres más información.
-                  </p>
+                  </div>
                 </div>
 
               </div>
