@@ -17,7 +17,7 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
-    id: 1,
+    id: '1',
     slug: 'nuestro-equipo',
     title: 'Nuestro equipo: la tecnología detrás de cada vuelo',
     excerpt: 'En C13 Studio trabajamos con una flota de drones cuidadosamente seleccionada para cubrir cualquier tipo de producción. Descubre qué volamos, por qué y cómo eso se traduce en resultados concretos para tu marca.',
