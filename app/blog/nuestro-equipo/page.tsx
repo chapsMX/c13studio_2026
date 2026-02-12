@@ -51,14 +51,14 @@ export default function PostNuestroEquipo() {
                 {/* Intro */}
                 <div className="space-y-4 text-gray-700 leading-relaxed">
                   <p>
-                    En C13 Studio trabajamos con una flota de drones cuidadosamente seleccionada para cubrir cualquier tipo de producción. No se trata solo de tener equipos modernos —aunque sí los tenemos— sino de elegir la herramienta correcta para cada proyecto. Aquí te contamos qué volamos, por qué lo volamos y cómo eso se traduce en resultados concretos para tu marca o empresa.
+                    En c13studio trabajamos con una flota de drones cuidadosamente seleccionada para cubrir cualquier tipo de producción. No se trata solo de tener equipos modernos —aunque sí los tenemos— sino de elegir la herramienta correcta para cada proyecto. Aquí te contamos qué volamos, por qué lo volamos y cómo eso se traduce en resultados concretos para tu marca o empresa.
                   </p>
                 </div>
 
                 {/* Mavic 4 Pro Section */}
                 <div className="space-y-4">
                   <h2 className="text-3xl font-bold text-c13-dark">
-                    DJI Mavic 4 Pro — El más nuevo de la línea
+                    DJI Mavic 4 Pro — El más nuevo en la flota
                   </h2>
                   <div className="relative w-full h-80 bg-gray-100 rounded-lg overflow-hidden">
                     <Image
@@ -69,7 +69,7 @@ export default function PostNuestroEquipo() {
                     />
                   </div>
                   <p className="text-gray-700 leading-relaxed">
-                    El Mavic 4 Pro es lo último que DJI tiene en drones de consumo avanzado, y se nota en cada aspecto del equipo. Lo que más nos importa en producción es la autonomía y la calidad de imagen, y este drone cumple en ambos frentes. Vuela hasta <strong>51 minutos</strong> por carga y opera con un alcance de control de hasta <strong>41 km</strong> gracias al sistema de transmisión O4+, lo que nos da una libertad de movimiento enorme en locaciones abiertas.
+                    El Mavic 4 Pro es lo último que DJI tiene en drones de consumo avanzado, y se nota en cada aspecto del equipo. Lo que más nos importa en producción es la autonomía y la calidad de imagen, y este drone cumple en ambos frentes. Vuela hasta <strong>51 minutos</strong> por carga y opera con un alcance de control de mas de <strong>10 kms</strong> gracias al sistema de transmisión O4+, lo que nos da una libertad de movimiento enorme en locaciones abiertas.
                   </p>
                   <p className="text-gray-700 leading-relaxed">
                     La cámara es triple: la principal es una <strong>Hasselblad de 100 MP</strong> con sensor CMOS 4/3, capaz de grabar video en <strong>6K a 60 fps en HDR</strong>. Se complementa con dos teleobjetivos —70mm y 168mm— para dar contexto, comprimir perspectivas o aislar detalles sin tener que mover el drone. El <strong>Infinity Gimbal de 360°</strong> permite tomas hacia arriba hasta 70 grados, lo que abre posibilidades que antes eran exclusivas de equipos de cine profesional.
@@ -93,8 +93,11 @@ export default function PostNuestroEquipo() {
                     />
                   </div>
                   <p className="text-gray-700 leading-relaxed">
-                    El Inspire 2 es un equipo de otra categoría. Es más grande, más rápido y más exigente en operación —por eso lo usamos cuando el proyecto lo requiere. Su característica más importante para nosotros es la cámara Zenmuse X7, que cuenta con una montura intercambiable DL-Mount compatible con cuatro ópticas prime: <strong>16mm, 24mm, 35mm y 50mm</strong>. Cambiar de lente en vuelo abre un lenguaje visual completamente diferente al de un zoom.
+                    El Inspire 2 es un equipo de otra categoría. Es más grande y más exigente en operación —por eso lo usamos cuando el proyecto lo requiere. Su característica más importante para nosotros es la cámara Zenmuse X7, que cuenta con una montura intercambiable DL-Mount compatible con cuatro ópticas prime: <strong>16mm, 24mm, 35mm y 50mm</strong>. Cambiar de lente en vuelo abre un lenguaje visual completamente diferente al de un zoom.
                   </p>
+                    <p className="text-gray-700 leading-relaxed">
+                    Es importante mencionar que este equipo es controlados por dos personas; el piloto del drone y el camarógrafo. Cada uno con un control independendiente lo que permite tener un mayor control y detalle en la operación de la cámara.
+                   </p>
                   <p className="text-gray-700 leading-relaxed">
                     El sensor Super 35 de la X7 tiene <strong>14 stops de rango dinámico</strong> y graba en <strong>6K CinemaDNG</strong> o <strong>5.2K Apple ProRes</strong>, los mismos formatos que usan cámaras de cine de alto nivel. Eso significa que el material aéreo se puede integrar directamente con el material de cámara en tierra sin que se note la diferencia en color, textura o profundidad de campo.
                   </p>
