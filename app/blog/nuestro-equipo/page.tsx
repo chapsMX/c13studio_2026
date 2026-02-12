@@ -167,6 +167,26 @@ export default function PostNuestroEquipo() {
                   </p>
                 </div>
 
+                {/* CTA Section */}
+                <div className="pt-12 mt-8 space-y-6 bg-gradient-to-r from-c13-blue/5 to-c13-orange/5 p-8 rounded-lg border border-gray-100">
+                  <p className="text-gray-700 leading-relaxed">
+                    Puedes conocer más sobre nuestro servicio de documentación de obra en{' '}
+                    <Link href="/documentacion" className="text-c13-orange font-bold hover:underline">
+                      documentación de obra
+                    </Link>
+                    {' '}o{' '}
+                    <a 
+                      href="https://wa.me/5215549429843?text=Hola%20c13studio%2C%20me%20gustaría%20conocer%20más%20sobre%20sus%20servicios."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-c13-orange font-bold hover:underline"
+                    >
+                      entrar en contacto
+                    </a>
+                    {' '}si requieres más información.
+                  </p>
+                </div>
+
               </div>
 
               {/* Right Column - Instagram Embed (1/3) */}
